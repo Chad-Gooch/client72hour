@@ -9,6 +9,7 @@ function App() {
     <div className="App">
         Parent - Develop
         Brayden
+        Chad
         <Weather />
         <Nasa />
         <Tmaster />
