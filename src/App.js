@@ -7,7 +7,7 @@ import Tmaster from './Components/Tmaster/Tmaster';
 function App() {
   return (
     <div className="App">
-        App
+        Parent
         <Weather />
         <Nasa />
         <Tmaster />
