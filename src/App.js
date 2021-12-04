@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
         Parent - Develop
+        Chad
         <Weather />
         <Nasa />
         <Tmaster />
