@@ -1,10 +1,10 @@
 import React, {setState} from 'react';
 import './Weather.css';
 
-function Weather() {
+const Weather = props => {
   return (
     <div className="Weather">
-        Weather
+        Weather {props.location[0]}, {props.location[1]}
     </div>
   );
 }
