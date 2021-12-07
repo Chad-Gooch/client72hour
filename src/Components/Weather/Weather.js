@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle} from 'reactstrap';
+  Button} from 'reactstrap';
 import './Weather.css';
 
 const Weather = props => {
 
     const lat = props.location[0];
     const lon = props.location [1];
+    let [temp, setTemp] = useState(true);
     const [result, setResult] = useState([]);
     const url = 'https://api.openweathermap.org/data/2.5';
     const key = 'f19f2d47c690f58f576572b71182a24e';
-
-    const fetchWeather = async () => {
+    
+    const fetchWeatherFahrenheit = async () => {
       await fetch(`${url}/weather/?lat=${lat}&lon=${lon}&units=imperial&APPID=${key}`)
       .then(res => res.json())
       .then(result => {
@@ -22,7 +23,7 @@ const Weather = props => {
     }
 
     useEffect(() =>{
-      fetchWeather();
+      fetchWeatherFahrenheit();
     },[props.location])
 
     var today = new Date();
@@ -38,13 +39,14 @@ const Weather = props => {
             <CardText className="city">{result.name}</CardText>
             <CardText>{today}</CardText>
             <CardImg className="weatherImg" src={`https://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`} />
-            <CardText>Temp: {Math.round(result.main.temp)}°F</CardText>
+            <CardText>Temp: {temp ? Math.round(result.main.temp)+"°F" : Math.round((result.main.temp-32)*.5556)+"°C"}</CardText>
             <CardText>Humidity: {result.main.humidity}%</CardText>
             <CardText>Description: {result.weather[0].description.toUpperCase()}</CardText>
+            <Button onClick={(e) => setTemp(!temp)}>Convert Temp</Button>
           </CardBody>
         </Card>
       ): (
-        <div></div>
+        <div> </div>
       )}
     </div>
   );
