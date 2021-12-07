@@ -21,10 +21,20 @@ function App() {
 
 
   return (
+    <div>
+      <div>
+        <h1 className="centerText">Party Planner</h1>
+        <p className="centerText">Weather, events and satellite imagery to help you plan your outing!</p>
+      </div>
     <div className="App">
+      <div>
         <Weather location={location} />
         <Nasa location={location}/>
+      </div>
+      <div>
         <Tmaster location={location}/>
+      </div>
+    </div>
     </div>
   );
 }
