@@ -22,9 +22,6 @@ function App() {
 
   return (
     <div className="App">
-        Parent - Develop
-        Brayden
-        Chad
         <Weather location={location} />
         <Nasa location={location}/>
         <Tmaster location={location}/>
