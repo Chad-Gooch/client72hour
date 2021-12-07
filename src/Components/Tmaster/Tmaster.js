@@ -1,10 +1,10 @@
 import React, {setState} from 'react';
 import './Tmaster.css';
 
-function Tmaster() {
+const Tmaster = props => {
   return (
     <div className="Tmaster">
-        Ticket Master
+        Ticket Master {props.location[0]}, {props.location[1]}
     </div>
   );
 }
