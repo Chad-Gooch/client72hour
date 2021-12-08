@@ -36,7 +36,7 @@ const Tmaster = props => {
   },[props.location])
 
   return (
-    <Table dark>
+    <Table id="ticketM" dark>
         <thead>
             <tr>
                 <th>Name</th>

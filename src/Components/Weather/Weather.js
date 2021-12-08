@@ -35,7 +35,7 @@ const Weather = props => {
     <div className="col d-flex justify-content-center">
       {(typeof result.main != 'undefined') ? (
         <Card className="Weather">
-          <CardBody>
+          <CardBody  id="weatherDiv">
             <CardText className="city">{result.name}</CardText>
             <CardText>{today}</CardText>
             <CardImg className="weatherImg" src={`https://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`} />
