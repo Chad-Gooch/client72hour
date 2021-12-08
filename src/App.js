@@ -3,6 +3,8 @@ import './App.css';
 import Weather from './Components/Weather/Weather';
 import Nasa from './Components/Nasa/Nasa';
 import Tmaster from './Components/Tmaster/Tmaster';
+import {Container, Row, Col} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -23,18 +25,20 @@ function App() {
   return (
     <div>
       <div>
-        <h1 className="centerText">Party Planner</h1>
+        <h1 className="centerTextHeader">Party Planner</h1>
         <p className="centerText">Weather, events and satellite imagery to help you plan your outing!</p>
       </div>
-    <div className="App">
-      <div>
+    <Container className="App">
+      <Row>
+      <Col>
         <Weather location={location} />
         <Nasa location={location}/>
-      </div>
-      <div>
+      </Col>
+      <Col id="tmasterGraph">
         <Tmaster location={location}/>
-      </div>
-    </div>
+      </Col>
+      </Row>
+    </Container>
     </div>
   );
 }

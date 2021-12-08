@@ -1,5 +1,6 @@
 .nasaImage {
-    max-width: 40%;
-    max-height: 500px;
-    border: solid black 5px;
+    max-width: 35%;
+    max-height: 450px;
+    border: solid white 1px;
+    box-shadow: 5px 10px 12px #888888;
 }
